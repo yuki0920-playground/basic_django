@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import todo
+from .views import TodoList
 
 urlpatterns = [
-    path('todo/', todo),
+    path('list/', TodoList.as_view()),
     ]
