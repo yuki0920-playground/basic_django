@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<body>
-    <form class="form-signin">
+<form class="form-signin" method="POST" action="">{% csrf_token %}
   <div class="text-center mb-4">
     <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Plese Sign up</h1>
@@ -20,5 +19,4 @@
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p>
 </form>
-</body>
 {% endblock content %}
