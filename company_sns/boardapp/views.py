@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from .models import BoardModel
 
 def signupfunc(request):
     if request.method == 'POST':
@@ -21,10 +22,11 @@ def loginfunc(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('signup')
+            return redirect('list')
         else:
             return redirect('login')
     return render(request, 'login.html')
 
 def listfunc(request):
-    return render(request, 'list.html')
+    object_list = BoardModel.objects.all()
+    return render(request, 'list.html', { 'object_list': object_list })
