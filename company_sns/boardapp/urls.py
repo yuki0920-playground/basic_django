@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import signupfunc, loginfunc, listfunc, logoutfunc, detailfunc
+from .views import signupfunc, loginfunc, listfunc, logoutfunc, detailfunc, goodfunc
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -9,4 +9,5 @@ urlpatterns = [
    path('list/', listfunc, name="list"),
    path('logout/', logoutfunc, name="logout"),
    path('detail/<int:pk>', detailfunc, name="detail"),
+   path('good/<int:pk>', goodfunc, name="good")
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
